@@ -1,0 +1,9 @@
+#ifndef TRYAMP_CORE
+#define TRYAMP_CORE
+
+#include<TryAmp/core/pdb/pdb.hpp>
+#include<TryAmp/core/dcd/dcd.hpp>
+#include<TryAmp/core/psf/psf.hpp>
+#include<TryAmp/core/snapshot.hpp>
+
+#endif // TRYAMP_CORE

@@ -1,0 +1,6 @@
+#ifndef TRYAMP_ANALYSIS
+#define TRYAMP_ANALYSIS
+#include<TryAmp/analysis/analysis.hpp>
+
+
+#endif // TRYAMP_ANALYSIS
