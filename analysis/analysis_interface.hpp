@@ -68,13 +68,13 @@ public:
 			throw std::logic_error(
 			"RunMethodLogicError: You must load some files before calling run methods.");
 
-		std::cout << "Reading data" << std::endl;
+		if (is_debug_mode) std::cout << "Reading data" << std::endl;
 		// read file and store data on AnalysisMethod Class
 		_object->prepare();
-		std::cout << "Calculation" << std::endl;
+		if (is_debug_mode) std::cout << "Calculation" << std::endl;
 		// analysis and calculation
 		_object->calculate();
-		std::cout << "Conclusion" << std::endl;
+		if (is_debug_mode) std::cout << "Conclusion" << std::endl;
 		// conclusion and return
 		return _object->conclude();
 	}
@@ -93,9 +93,16 @@ public:
 	}
 
 
+	void set_debug() {
+		is_debug_mode = true;
+		_object->set_debug();
+	}
+
+
 private:
 	std::unique_ptr<T> _object;
 
+	bool is_debug_mode = false;
 
 };
 

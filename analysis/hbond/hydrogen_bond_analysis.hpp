@@ -181,6 +181,11 @@ private:
 
 	std::vector<std::vector<PDB_AtomLine>> _atom_info;
 	std::vector<HydrogenBond> _hydrogen_bonds;
+
+
+// about debuging
+	bool is_debug_mode = false;
+	void set_debug() {is_debug_mode = true;}
 };
 
 
@@ -212,7 +217,8 @@ inline void HydrogenBondAnalysis::calculate() {
 			? HBond_HeavyAcceptorDict(additional_acceptors.first, additional_acceptors.second)
 			: HBond_HeavyAcceptorDict();
 
-	std::cout << "Donor and Acceptor pair is defined." << std::endl;
+	if (is_debug_mode)
+		std::cout << "Donor and Acceptor pair is defined." << std::endl;
 
 	std::vector<HBond_Donor> hbond_donor;
 	std::vector<HBond_Acceptor> hbond_acceptor;

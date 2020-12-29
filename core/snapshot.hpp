@@ -107,11 +107,11 @@ public:
 
 
 
-	const std::size_t size() {
+	std::size_t size() const {
 		return atom_num;
 	}
 
-	const std::size_t dimension() {
+	std::size_t dimension() const {
 		return Dim;
 	}
 

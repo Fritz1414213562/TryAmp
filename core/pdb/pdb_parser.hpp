@@ -183,7 +183,7 @@ std::string PDBParser::read_Element(const std::string& line) const {
 
 float PDBParser::read_Charge(const std::string& line) const {
 	const std::string& buffer = readline_range_of<CHARGE_BEGIN, CHARGE_END>(line);
-	const float& retval = std::stof(buffer);
+	const float& retval = (buffer == "  ") ? 0. : std::stof(buffer);
 	return retval;
 }
 

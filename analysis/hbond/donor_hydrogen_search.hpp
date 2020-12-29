@@ -44,12 +44,12 @@ inline std::vector<HBond_Donor> search_hbond_donor(
 	std::vector<HBond_Donor> result;
 
 	for (std::size_t i_atom = 0; i_atom < heavy_atom_names.donor_atom_num(); ++i_atom) {
-		const std::string& heavy_atom_name = heavy_atom_names[i_atom];
-		const std::string& hydrogen_name = {'H', heavy_atom_name[2], heavy_atom_name[3]};
+
 		// search the position of donor heavy atom
+
+		const std::string& heavy_atom_name = heavy_atom_names[i_atom];
 		PDB_AtomLine heavy_atom;
 		bool exists_donor = false;
-
 		for (const PDB_AtomLine& atom_line : resi_topo) {
 			if (heavy_atom_name == atom_line.atom_name()) {
 				heavy_atom = atom_line;
@@ -59,10 +59,26 @@ inline std::vector<HBond_Donor> search_hbond_donor(
 		}
 		if (not exists_donor) continue;
 
-		for (const PDB_AtomLine& atom_line : resi_topo) {
-			const std::string& atom_kind = atom_line.atom_name().substr(1, 3);
-			if (atom_kind == hydrogen_name) {
-				result.push_back(HBond_Donor(heavy_atom, atom_line));
+		// search the position of donor hydrogen atom
+
+		if (heavy_atom_name[3] == ' ') {
+			const std::string& hydrogen_name = {'H', heavy_atom_name[2]};
+
+			for (const PDB_AtomLine& atom_line : resi_topo) {
+				const std::string& atom_kind = atom_line.atom_name().substr(1, 2);
+				if (atom_kind == hydrogen_name) {
+					result.push_back(HBond_Donor(heavy_atom, atom_line));
+				}
+			}
+		}
+		else {
+			const std::string& hydrogen_name = {'H', heavy_atom_name[2], heavy_atom_name[3]};
+
+			for (const PDB_AtomLine& atom_line : resi_topo) {
+				const std::string& atom_kind = atom_line.atom_name().substr(1, 3);
+				if (atom_kind == hydrogen_name) {
+					result.push_back(HBond_Donor(heavy_atom, atom_line));
+				}
 			}
 		}
 	}

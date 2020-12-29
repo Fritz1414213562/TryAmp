@@ -5,5 +5,6 @@
 #include<TryAmp/core/dcd/dcd.hpp>
 #include<TryAmp/core/psf/psf.hpp>
 #include<TryAmp/core/snapshot.hpp>
+#include<TryAmp/core/ninfo/ninfo.hpp>
 
 #endif // TRYAMP_CORE

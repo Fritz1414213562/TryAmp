@@ -59,6 +59,7 @@ public:
 
 //	template<typename... Args>
 //	void conclude();
+	void set_debug();
 
 //private:
 
