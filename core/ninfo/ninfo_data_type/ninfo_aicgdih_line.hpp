@@ -32,8 +32,7 @@ public:
 		float,
 		float,
 		float,
-		float,
-		std::string>>::value, "usage: Ninfo_AICGDIHLine, 11 x unsigned long long, 5 x float, string");
+		float>>::value, "usage: Ninfo_AICGDIHLine, 11 x unsigned long long, 5 x float, string");
 
 		const std::tuple<Args...> args_tuple(arguments...);
 		serial_number = std::get<0>(args_tuple);
@@ -52,7 +51,6 @@ public:
 		correct_mgo = std::get<13>(args_tuple);
 		coefficient_dih = std::get<14>(args_tuple);
 		coefficient_wid = std::get<15>(args_tuple);
-		aicgdih_type = std::get<16>(args_tuple);
 	}
 
 	~Ninfo_AICGDihLine() = default;
@@ -108,9 +106,6 @@ public:
 	float coef_width() const {return coefficient_wid;}
 	float& coef_width() {return coefficient_wid;}
 
-	std::string type() const {return aicgdih_type;}
-	std::string& type() {return aicgdih_type;}
-
 
 
 private:
@@ -132,7 +127,6 @@ private:
 	float correct_mgo;
 	float coefficient_dih;
 	float coefficient_wid;
-	std::string aicgdih_type;
 
 };
 

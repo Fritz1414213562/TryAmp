@@ -30,8 +30,7 @@ public:
 		float,
 		float,
 		float,
-		float,
-		std::string>>::value, "usage: Ninfo_AICG13Line, 9 x unsigned long long, 5 x float, string");
+		float>>::value, "usage: Ninfo_AICG13Line, 9 x unsigned long long, 5 x float, string");
 
 		const std::tuple<Args...> args_tuple(arguments...);
 		serial_number = std::get<0>(args_tuple);
@@ -48,7 +47,6 @@ public:
 		correct_mgo = std::get<11>(args_tuple);
 		coefficient = std::get<12>(args_tuple);
 		width_gauss = std::get<13>(args_tuple);
-		aicg13_type = std::get<14>(args_tuple);
 	}
 
 	~Ninfo_AICG13Line() = default;
@@ -97,9 +95,6 @@ public:
 	float coef_width() const {return width_gauss;}
 	float& coef_width() {return width_gauss;}
 
-	std::string type() const {return aicg13_type;}
-	std::string& type() {return aicg13_type;}
-
 
 
 private:
@@ -119,7 +114,6 @@ private:
 	float correct_mgo;
 	float coefficient;
 	float width_gauss;
-	std::string aicg13_type;
 
 };
 

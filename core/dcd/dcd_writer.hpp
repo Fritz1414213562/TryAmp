@@ -180,9 +180,9 @@ private:
 	std::array<int, 4> zero_4times = {0, 0, 0, 0};
 	std::array<int, 9> zero_9times = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 	std::string CafeMol_code = 
-	  "==================== Molecular Dynamics Code : CafeMol ver.  2.01.1500 =========";
+	  "==================== TryAmp DCD Writer Code : Analysis tools for MD    =========";
 	std::string Developer_name =
-	  "==================== Developed by Kyoto University =============================";
+	  "==================== Developed by Fritz Nagae ==================================";
 
 	int prec = 14;
 	int version = 24;

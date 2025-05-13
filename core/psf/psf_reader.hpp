@@ -88,12 +88,14 @@ public:
 			std::exit(1);
 		}
 
-		std::cout << "atom_num = " << block_atom_num << std::endl;
-		std::cout << "bond_num = " << block_bond_num << std::endl;
+		if (is_debug_mode) std::cout << "atom_num = " << block_atom_num << std::endl;
+		if (is_debug_mode) std::cout << "bond_num = " << block_bond_num << std::endl;
 
 		return result;
 
 	}
+
+	void set_debug() {is_debug_mode = true;}
 
 };
 }

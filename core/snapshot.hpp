@@ -54,23 +54,23 @@ public:
 	}
 
 
-	std::array<realT, Dim>& operator[](const std::size_t& index) {
-		std::array<realT, Dim> result;
+//	std::array<realT, Dim>& operator[](const std::size_t& index) {
+//		std::array<realT, Dim> result;
+//
+//		for (std::size_t i_dim = 0; i_dim < Dim; ++i_dim) {
+//			result[i_dim] = snap_shot[i_dim][index];
+//		}
+//		return result;
+//	}
 
-		for (std::size_t i_dim = 0; i_dim < Dim; ++i_dim) {
-			result[i_dim] = snap_shot[i_dim][index];
-		}
-		return result;
+
+	realT operator()(const std::size_t& idimension, const std::size_t& iatom) const {
+		return snap_shot[idimension][iatom];
 	}
 
 
-	realT operator()(const std::size_t& i_index, const std::size_t& j_index) const {
-		return snap_shot[i_index][j_index];
-	}
-
-
-	realT& operator()(const std::size_t& i_index, const std::size_t& j_index) {
-		return snap_shot[i_index][j_index];
+	realT& operator()(const std::size_t& idimension, const std::size_t& iatom) {
+		return snap_shot[idimension][iatom];
 	}
 
 

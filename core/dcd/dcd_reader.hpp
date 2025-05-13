@@ -15,6 +15,7 @@ class DCDReader : public DCDParser {
 
 public :
 	DCDReader(const std::string& input_file_name) : DCDParser(input_file_name) {}
+	DCDReader(const std::string& input_file_name, const bool& debug_flag) : DCDParser(input_file_name, debug_flag) {}
 	DCDReader() : DCDParser() {}
 	~DCDReader() = default;
 
@@ -103,6 +104,7 @@ public :
 		return dcd_header3;
 	}
 
+	void set_debug() {is_debug_mode = true;}
 
 
 

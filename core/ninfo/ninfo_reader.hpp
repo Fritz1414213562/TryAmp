@@ -39,7 +39,7 @@ public:
 				std::stoi(words[1]), std::stoi(words[2]), std::stoi(words[3]),
 				std::stoi(words[4]), std::stoi(words[5]), std::stoi(words[6]),
 				std::stoi(words[7]), std::stof(words[8]), std::stof(words[9]),
-				std::stof(words[10]), std::stof(words[11]), words[12]);
+				std::stof(words[10]), std::stof(words[11]));
 			}
 			else if (words[0] == "angl") {
 				result.add_AnglLine(
@@ -47,7 +47,7 @@ public:
 				std::stoi(words[4]), std::stoi(words[5]), std::stoi(words[6]),
 				std::stoi(words[7]), std::stoi(words[8]), std::stoi(words[9]),
 				std::stof(words[10]), std::stof(words[11]), std::stof(words[12]),
-				std::stof(words[13]), words[14]);
+				std::stof(words[13]));
 			}
 			else if (words[0] == "angl") {
 				result.add_AnglLine(
@@ -55,7 +55,7 @@ public:
 				std::stoi(words[4]), std::stoi(words[5]), std::stoi(words[6]),
 				std::stoi(words[7]), std::stoi(words[8]), std::stoi(words[9]),
 				std::stof(words[10]), std::stof(words[11]), std::stof(words[12]),
-				std::stof(words[13]), words[14]);
+				std::stof(words[13]));
 			}
 			else if (words[0] == "aicg13") {
 				result.add_AICG13Line(
@@ -63,7 +63,7 @@ public:
 				std::stoi(words[4]), std::stoi(words[5]), std::stoi(words[6]),
 				std::stoi(words[7]), std::stoi(words[8]), std::stoi(words[9]),
 				std::stof(words[10]), std::stof(words[11]), std::stof(words[12]),
-				std::stof(words[13]), std::stof(words[14]), words[15]);
+				std::stof(words[13]), std::stof(words[14]));
 			}
 			else if (words[0] == "dihd") {
 				result.add_DihdLine(
@@ -72,7 +72,7 @@ public:
 				std::stoi(words[7]), std::stoi(words[8]), std::stoi(words[9]),
 				std::stoi(words[10]), std::stoi(words[11]), std::stof(words[12]),
 				std::stof(words[13]), std::stof(words[14]), std::stof(words[15]),
-				std::stof(words[16]), words[17]);
+				std::stof(words[16]));
 			}
 			else if (words[0] == "aicgdih") {
 				result.add_AICGDihLine(
@@ -81,14 +81,14 @@ public:
 				std::stoi(words[7]), std::stoi(words[8]), std::stoi(words[9]),
 				std::stoi(words[10]), std::stoi(words[11]), std::stof(words[12]),
 				std::stof(words[13]), std::stof(words[14]), std::stof(words[15]),
-				std::stof(words[16]), words[17]);
+				std::stof(words[16]));
 			}
 			else if (words[0] == "contact") {
 				result.add_ContactLine(
 				std::stoi(words[1]), std::stoi(words[2]), std::stoi(words[3]),
 				std::stoi(words[4]), std::stoi(words[5]), std::stoi(words[6]),
 				std::stoi(words[7]), std::stof(words[8]), std::stof(words[9]),
-				std::stoi(words[10]), std::stof(words[11]), words[12]);
+				std::stoi(words[10]), std::stof(words[11]));
 
 			}
 			else if (words[0] == "pdns") {

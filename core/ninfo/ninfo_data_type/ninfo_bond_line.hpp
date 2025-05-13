@@ -27,8 +27,8 @@ public:
 		float,
 		float,
 		float,
-		float,
-		std::string>>::value, "usage: Ninfo_BondLine, 7 x unsigned long long, 4 x float, string");
+		float>>::value,
+		"usage: Ninfo_BondLine, 7 x unsigned long long, 4 x float, string");
 
 		const std::tuple<Args...> args_tuple(arguments...);
 		serial_number = std::get<0>(args_tuple);
@@ -42,7 +42,6 @@ public:
 		factor_go = std::get<8>(args_tuple);
 		correct_mgo = std::get<9>(args_tuple);
 		coefficient = std::get<10>(args_tuple);
-		bond_type = std::get<11>(args_tuple);
 	}
 
 	~Ninfo_BondLine() = default;
@@ -82,9 +81,6 @@ public:
 	float coef() const {return coefficient;}
 	float& coef() {return coefficient;}
 
-	std::string type() const {return bond_type;}
-	std::string& type() {return bond_type;}
-
 
 
 private:
@@ -101,7 +97,6 @@ private:
 	float factor_go;
 	float correct_mgo;
 	float coefficient;
-	std::string bond_type;
 
 };
 

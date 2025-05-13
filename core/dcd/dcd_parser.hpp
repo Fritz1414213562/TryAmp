@@ -30,6 +30,9 @@ class DCDParser : public FileParser {
 public :
 	DCDParser() : FileParser() {}
 	DCDParser(const std::string& input_file_name) : FileParser(input_file_name) {}
+	DCDParser(const std::string& input_file_name, const bool& debug_flag) : FileParser(input_file_name) {
+		is_debug_mode = debug_flag;
+	}
 	~DCDParser() = default;
 
 
@@ -43,8 +46,7 @@ protected :
 	DCD_3rdHeader dcd_header3;
 
 	bool is_read_headers = false;
-
-
+	bool is_debug_mode = false;
 	
 
 	std::array<std::vector<float>, 3> read_xyz() {
@@ -64,18 +66,29 @@ protected :
 
 		open();
 		is_read_headers = true;
+		if (is_debug_mode)
+			std::cout << "read 1st block" << std::endl;
 		const std::string& first_block = read_block();
 		dcd_header1 = parse_1st_header(first_block);
 		read_frame_num(first_block);
 
+		if (is_debug_mode)
+			std::cout << "read 2nd block" << std::endl;
 		const std::string& second_block = read_block();
-		dcd_header2 = parse_2nd_header(second_block);
+		//dcd_header2 = parse_2nd_header(second_block);
 
+		if (is_debug_mode)
+			std::cout << "read 3rd block" << std::endl;
 		const std::string& third_block = read_block();
 		read_atom_num(third_block);
 		dcd_header3 = parse_3rd_header();
-		std::cout << "frame number = " << frame_num << std::endl;
-		std::cout << "atom number = " << atom_num << std::endl;
+
+		if (is_debug_mode)
+			std::cout << "read body" << std::endl;
+		if (is_debug_mode)
+			std::cout << "frame number = " << frame_num << std::endl;
+		if (is_debug_mode)
+			std::cout << "atom number = " << atom_num << std::endl;
 
 //		for (const std::string& header : headers) {
 //			std::cout << header << std::endl;

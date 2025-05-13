@@ -19,6 +19,8 @@ public:
 
 protected:
 
+	bool is_debug_mode = false;
+
 
 	const std::size_t read_BlockNum(const std::string& line) {
 		const std::string& buffer = readline_rangeof<BLOCK_NUMBER_BEGIN, BLOCK_NUMBER_END>(line);

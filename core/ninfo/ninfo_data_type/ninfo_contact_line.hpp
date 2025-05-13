@@ -27,8 +27,9 @@ public:
 		float,
 		float,
 		int,
-		float,
-		std::string>>::value, "usage: Ninfo_ContactLine, 7 x unsigned long long, 2 x float, unsigned long long, float, string");
+		float>>::value, "usage: Ninfo_ContactLine, 7 x unsigned long long, 2 x float, unsigned long long, float, string");
+//		float,
+//		std::string>>::value, "usage: Ninfo_ContactLine, 7 x unsigned long long, 2 x float, unsigned long long, float, string");
 
 		const std::tuple<Args...> args_tuple(arguments...);
 		serial_number = std::get<0>(args_tuple);
@@ -42,7 +43,7 @@ public:
 		factor_go = std::get<8>(args_tuple);
 		dummy_number = std::get<9>(args_tuple);
 		coefficient = std::get<10>(args_tuple);
-		contact_type = std::get<11>(args_tuple);
+	//	contact_type = std::get<11>(args_tuple);
 	}
 
 	~Ninfo_ContactLine() = default;
@@ -82,8 +83,8 @@ public:
 	float coef() const {return coefficient;}
 	float& coef() {return coefficient;}
 
-	std::string type() const {return contact_type;}
-	std::string& type() {return contact_type;}
+//	std::string type() const {return contact_type;}
+//	std::string& type() {return contact_type;}
 
 
 
@@ -101,7 +102,7 @@ private:
 	float factor_go;
 	int dummy_number;
 	float coefficient;
-	std::string contact_type;
+//	std::string contact_type;
 
 };
 

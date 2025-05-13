@@ -51,10 +51,6 @@ private:
 		result.push_back(read_PartialLine<BOND_MGO_BEGIN, BOND_MGO_END>(line));
 		result.push_back(read_PartialLine<BOND_COEF_BEGIN, BOND_COEF_END>(line));
 
-		if (static_cast<int>(BOND_TYPE_BEGIN) < line.size()) {
-			result.push_back(read_PartialLine<BOND_TYPE_BEGIN, BOND_TYPE_END>(line));
-		}
-		else result.push_back(empty_line_type);
 
 		return result;
 	}
@@ -78,10 +74,6 @@ private:
 		result.push_back(read_PartialLine<ANGL_MGO_BEGIN, ANGL_MGO_END>(line));
 		result.push_back(read_PartialLine<ANGL_COEF_BEGIN, ANGL_COEF_END>(line));
 
-		if (static_cast<int>(ANGL_TYPE_BEGIN) < line.size()) {
-			result.push_back(read_PartialLine<ANGL_TYPE_BEGIN, ANGL_TYPE_END>(line));
-		}
-		else result.push_back(empty_line_type);
 
 		return result;
 	}
@@ -106,10 +98,6 @@ private:
 		result.push_back(read_PartialLine<AICG13_COEF_BEGIN, AICG13_COEF_END>(line));
 		result.push_back(read_PartialLine<AICG13_WIDTH_BEGIN, AICG13_WIDTH_END>(line));
 
-		if (static_cast<int>(AICG13_TYPE_BEGIN) < line.size()) {
-			result.push_back(read_PartialLine<AICG13_TYPE_BEGIN, AICG13_TYPE_END>(line));
-		}
-		else result.push_back(empty_line_type);
 
 		return result;
 	}
@@ -136,10 +124,6 @@ private:
 		result.push_back(read_PartialLine<DIHD_COEF1_BEGIN, DIHD_COEF1_END>(line));
 		result.push_back(read_PartialLine<DIHD_COEF2_BEGIN, DIHD_COEF2_END>(line));
 
-		if (static_cast<int>(DIHD_TYPE_BEGIN) < line.size()) {
-			result.push_back(read_PartialLine<DIHD_TYPE_BEGIN, DIHD_TYPE_END>(line));
-		}
-		else result.push_back(empty_line_type);
 
 		return result;
 	}
@@ -166,10 +150,6 @@ private:
 		result.push_back(read_PartialLine<AICGDIH_COEF_BEGIN, AICGDIH_COEF_END>(line));
 		result.push_back(read_PartialLine<AICGDIH_WIDTH_BEGIN, AICGDIH_WIDTH_END>(line));
 
-		if (static_cast<int>(AICGDIH_TYPE_BEGIN) < line.size()) {
-			result.push_back(read_PartialLine<AICGDIH_TYPE_BEGIN, AICGDIH_TYPE_END>(line));
-		}
-		else result.push_back(empty_line_type);
 
 		return result;
 	}
@@ -191,10 +171,6 @@ private:
 		result.push_back(read_PartialLine<CONTACT_DUMMY_BEGIN, CONTACT_DUMMY_END>(line));
 		result.push_back(read_PartialLine<CONTACT_COEF_BEGIN, CONTACT_COEF_END>(line));
 
-		if (static_cast<int>(CONTACT_TYPE_BEGIN) < line.size()) {
-			result.push_back(read_PartialLine<CONTACT_TYPE_BEGIN, CONTACT_TYPE_END>(line));
-		}
-		else result.push_back(empty_line_type);
 
 		return result;
 	}

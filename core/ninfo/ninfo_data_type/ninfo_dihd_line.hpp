@@ -32,8 +32,7 @@ public:
 		float,
 		float,
 		float,
-		float,
-		std::string>>::value, "usage: Ninfo_DihdLine, 11 x unsigned long long, 5 x float, string");
+		float>>::value, "usage: Ninfo_DihdLine, 11 x unsigned long long, 5 x float, string");
 
 		const std::tuple<Args...> args_tuple(arguments...);
 		serial_number = std::get<0>(args_tuple);
@@ -52,7 +51,6 @@ public:
 		correct_mgo = std::get<13>(args_tuple);
 		coefficient_lhs = std::get<14>(args_tuple);
 		coefficient_rhs = std::get<15>(args_tuple);
-		dihd_type = std::get<16>(args_tuple);
 	}
 
 	~Ninfo_DihdLine() = default;
@@ -108,9 +106,6 @@ public:
 	float coef_rhs() const {return coefficient_rhs;}
 	float& coef_rhs() {return coefficient_rhs;}
 
-	std::string type() const {return dihd_type;}
-	std::string& type() {return dihd_type;}
-
 
 
 private:
@@ -132,7 +127,6 @@ private:
 	float correct_mgo;
 	float coefficient_lhs;
 	float coefficient_rhs;
-	std::string dihd_type;
 
 };
 
