@@ -40,6 +40,7 @@ protected :
 
 	std::size_t frame_num = 0;
 	std::size_t atom_num = 0;
+	bool has_unitcell = false;
 
 	DCD_1stHeader dcd_header1;
 	DCD_2ndHeader dcd_header2;
@@ -48,8 +49,13 @@ protected :
 	bool is_read_headers = false;
 	bool is_debug_mode = false;
 	
+	bool read_unitcell_flag(const std::string& block)
+	{
+		has_unitcell = static_cast<bool>(read_binary_as<int>(&block.at(44)));
+	}
 
 	std::array<std::vector<float>, 3> read_xyz() {
+		if (has_unitcell) read_block();
 		const std::string& x_block = read_block();
 		const std::string& y_block = read_block();
 		const std::string& z_block = read_block();
@@ -70,6 +76,7 @@ protected :
 			std::cout << "read 1st block" << std::endl;
 		const std::string& first_block = read_block();
 		dcd_header1 = parse_1st_header(first_block);
+		read_unitcell_flag(first_block);
 		read_frame_num(first_block);
 
 		if (is_debug_mode)
