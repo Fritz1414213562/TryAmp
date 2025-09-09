@@ -49,7 +49,7 @@ protected :
 	bool is_read_headers = false;
 	bool is_debug_mode = false;
 	
-	bool read_unitcell_flag(const std::string& block)
+	void read_unitcell_flag(const std::string& block)
 	{
 		has_unitcell = static_cast<bool>(read_binary_as<int>(&block.at(44)));
 	}
